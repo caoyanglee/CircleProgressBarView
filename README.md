@@ -1,13 +1,13 @@
 #CircleProgressBarView
 A library Show the progress with circleBar feature.一个展示圆形进度条的开源库
 ##Demo
-![]()
+![](https://github.com/CaoyangLee/CircleProgressBarView/blob/master/circleProgressBarView.gif)
 
 ##Gradle
 
 ```Jcenter
 dependencies{
-    compile 'com.weimu.circle-progressbar-view'
+    compile 'com.weimu:circle-progressbar-view:1.0.0'
 }
 ```
 
