@@ -10,7 +10,26 @@ dependencies{
     compile 'com.weimu:circle-progressbar-view:1.0.0'
 }
 ```
-
+## Usage
+```Xml
+<!--recyclerView中建议使isAutoAnimation属性为false，手动控制开始动画-->
+<io.weimu.www.CircleProgressBarView
+android:id="@+id/crv_01"
+android:layout_width="88dp"
+android:layout_height="88dp"
+android:layout_marginTop="8dp"
+app:backgroundColor="#ffffff"
+app:animationTime="2000"
+app:isShowAnimation="true"
+app:isShowText="true"
+app:isAutoAnimation="false"
+app:progressBarBackgroundColor="#f6f6f6"
+app:progressBarColor="#2599ea"
+app:progressBarWidth="5dp"
+app:progressValue="95"
+app:textColor="#2599ea"
+app:textSize="16sp" />
+```
 ###Attributes
 
 |name|format|description|
