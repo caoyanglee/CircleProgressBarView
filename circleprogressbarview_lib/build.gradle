@@ -36,7 +36,7 @@ publish {
     userOrg = 'weimu'//bintray.com 【组织名称】
     groupId = 'com.weimu'//jcenter上的路径  【自己设置】
     artifactId = 'circle-progressbar-view'//packageName 【对应】
-    publishVersion = '1.0.2'//版本号
+    publishVersion = '1.0.3'//版本号
     desc = 'circle progressbar view'//描述，不重要
     website = 'https://github.com/CaoyangLee/CircleProgressBarView'//网站，不重要；尽量模拟github上的地址，例如我这样的；当然你有地址最好了
 }
