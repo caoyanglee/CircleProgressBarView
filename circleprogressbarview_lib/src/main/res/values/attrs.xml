@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+
+    <declare-styleable name="CircleProgressBarView">
+        <attr name="backgroundColor" format="color"/><!--背景颜色-->
+        <attr name="progressBarColor" format="color"/><!--进度条颜色-->
+        <attr name="progressBarBackgroundColor" format="color"/><!--进度条背景颜色-->
+        <attr name="progressBarWidth" format="dimension" /><!--色带宽度-->
+        <attr name="progressValue" format="integer" /><!--百分比 最大值为100-->
+        <attr name="isShowAnimation" format="boolean"/><!--是否需要动画-->
+        <attr name="isAutoAnimation" format="boolean"/><!--是否需要自动启动动画-->
+        <attr name="animationTime" format="integer"/><!--动画时间-->
+        <attr name="textSize" format="dimension"/><!--是否显示百分比文本-->
+        <attr name="textColor" format="color"/><!--百分比文本颜色-->
+        <attr name="isShowText" format="boolean"/><!--是否显示文本-->
+    </declare-styleable>
+</resources>
