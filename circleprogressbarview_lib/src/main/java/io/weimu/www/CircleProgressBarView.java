@@ -14,8 +14,8 @@ import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 
 /**
- *@author caoyang[艹羊]
- *@sutdio WeiMu[微木]
+ *@author caoyang～ [WeiMu Studio]
+ *
  */
 public class CircleProgressBarView extends View {
     private Context mContext;
@@ -234,9 +234,7 @@ public class CircleProgressBarView extends View {
         postInvalidate();
     }
 
-    /**
-     * 设置进度值
-     */
+
     public void setProgressValue(int mTotalPercent) {
         if (mTotalPercent > 100) {
             this.mProgressValue = 100;

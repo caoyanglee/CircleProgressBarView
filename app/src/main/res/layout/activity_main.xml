@@ -22,41 +22,46 @@
             android:layout_height="match_parent">
         <io.weimu.www.CircleProgressBarView
             android:id="@+id/crv_01"
-            android:layout_width="68dp"
-            android:layout_height="68dp"
+            android:layout_width="88dp"
+            android:layout_height="88dp"
             app:progressValue="10"
+            android:layout_marginTop="8dp"
             app:progressBarColor="@color/blue_special"
             app:progressBarWidth="5dp" />
 
         <io.weimu.www.CircleProgressBarView
             android:id="@+id/crv_02"
-            android:layout_width="68dp"
-            android:layout_height="68dp"
+            android:layout_width="88dp"
+            android:layout_height="88dp"
+            android:layout_marginTop="8dp"
             app:progressValue="30"
             app:progressBarColor="@color/green_status"
             app:progressBarWidth="5dp" />
 
         <io.weimu.www.CircleProgressBarView
             android:id="@+id/crv_03"
-            android:layout_width="68dp"
-            android:layout_height="68dp"
+            android:layout_width="88dp"
+            android:layout_height="88dp"
             app:progressValue="50"
+            android:layout_marginTop="8dp"
             app:progressBarColor="@color/tribe_manager"
             app:progressBarWidth="5dp" />
 
         <io.weimu.www.CircleProgressBarView
             android:id="@+id/crv_04"
-            android:layout_width="68dp"
-            android:layout_height="68dp"
+            android:layout_width="88dp"
+            android:layout_height="88dp"
+            android:layout_marginTop="8dp"
             app:progressValue="70"
             app:progressBarColor="@color/delivery_yellow"
             app:progressBarWidth="5dp" />
 
         <io.weimu.www.CircleProgressBarView
             android:id="@+id/crv_05"
-            android:layout_width="68dp"
-            android:layout_height="68dp"
+            android:layout_width="88dp"
+            android:layout_height="88dp"
             app:progressValue="90"
+            android:layout_marginTop="8dp"
             app:progressBarColor="@color/tribe_host"
             app:progressBarWidth="5dp" />
         </LinearLayout>
