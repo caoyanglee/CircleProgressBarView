@@ -47,7 +47,7 @@ app:textSize="16sp" />
 
 ```Jcenter
 dependencies{
-    compile 'com.weimu:circle-progressbar-view:1.0.0'
+    compile 'com.weimu:circle-progressbar-view:1.0.3'
 }
 ```
 
