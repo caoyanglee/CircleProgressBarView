@@ -142,9 +142,11 @@ public class CircleProgressBarView extends View {
 
 
         //进度条背景
-        grayPaint.setColor(mProgressBarBackgroundColor);
-        grayPaint.setAntiAlias(true);
-        canvas.drawArc(rect, 270, 360, true, grayPaint);
+        if (!isFanShaped){
+            grayPaint.setColor(mProgressBarBackgroundColor);
+            grayPaint.setAntiAlias(true);
+            canvas.drawArc(rect, 270, 360, true, grayPaint);
+        }
 
         //进度条
         sectorPaint.setColor(mProgressBarColor);

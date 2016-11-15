@@ -35,7 +35,7 @@
                 app:isAutoAnimation="false"
                 app:progressBarBackgroundColor="#f6f6f6"
                 app:progressBarColor="#2599ea"
-                app:progressBarWidth="5dp"
+                app:progressBarWidth="45dp"
                 app:progressValue="95"
                 app:textColor="#2599ea"
                 app:textSize="16sp" />
@@ -47,6 +47,7 @@
                 app:isAutoAnimation="true"
                 app:isFanShaped="true"
                 android:layout_marginTop="8dp"
+                app:backgroundColor="#2599ea"
                 app:progressBarColor="@color/green_status"
                 app:progressBarWidth="5dp"
                 app:progressValue="30" />
