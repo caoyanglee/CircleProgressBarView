@@ -3,14 +3,9 @@ A library Show the progress with circleBar feature.一个展示圆形进度条�
 ##Demo
 ![](https://github.com/CaoyangLee/CircleProgressBarView/blob/master/circleProgressBarView.gif)
 
-##Gradle
 
-```Jcenter
-dependencies{
-    compile 'com.weimu:circle-progressbar-view:1.0.0'
-}
-```
 ## Usage
+
 ```Xml
 <!--recyclerView中建议使isAutoAnimation属性为false，手动控制开始动画-->
 <io.weimu.www.CircleProgressBarView
@@ -46,4 +41,11 @@ app:textSize="16sp" />
 | textColor | color | 百分比文本颜色
 | isShowText | boolean | 是否显示文本
 
+##Gradle
+
+```Jcenter
+dependencies{
+    compile 'com.weimu:circle-progressbar-view:1.0.0'
+}
+```
 
