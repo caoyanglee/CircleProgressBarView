@@ -15,5 +15,6 @@
         <attr name="textSize" format="dimension"/><!--是否显示百分比文本-->
         <attr name="textColor" format="color"/><!--百分比文本颜色-->
         <attr name="isShowText" format="boolean"/><!--是否显示文本-->
+        <attr name="isFanShaped" format="boolean"/><!--是否为扇形-->
     </declare-styleable>
 </resources>

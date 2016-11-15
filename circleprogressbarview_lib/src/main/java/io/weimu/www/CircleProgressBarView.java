@@ -43,7 +43,8 @@ public class CircleProgressBarView extends View {
     private int mAnimationTime;//动画时间【毫秒】
     private float mTextSize;//文本大小
     private  boolean isShowText;//是否显示文本
-    private  int mTextColor;//文本颜色
+    private  int mTextColor;//文本颜色o
+    private  boolean isFanShaped;//是否扇形
     //****属性定义****
 
     //动画位置百分比进度
@@ -83,6 +84,7 @@ public class CircleProgressBarView extends View {
         mTextSize = a.getDimension(R.styleable.CircleProgressBarView_textSize, dip2px(16));
         isShowText= a.getBoolean(R.styleable.CircleProgressBarView_isShowText,true);
         mTextColor=a.getColor(R.styleable.CircleProgressBarView_textColor,mProgressBarColor);
+        isFanShaped=a.getBoolean(R.styleable.CircleProgressBarView_isFanShaped,false);
     }
 
 
@@ -150,7 +152,7 @@ public class CircleProgressBarView extends View {
         canvas.drawArc(rect, 270, mEndAngle, true, sectorPaint);
 
         //前景图
-        if (mProgressbarWidth<mRadius){
+        if (mProgressbarWidth<mRadius&&!isFanShaped){
             smallCirclePaint.setAntiAlias(true);
             smallCirclePaint.setColor(mBackGroundColor);
             canvas.drawCircle(x, y, mRadius - mProgressbarWidth, smallCirclePaint);

@@ -45,6 +45,7 @@
                 android:layout_width="88dp"
                 android:layout_height="88dp"
                 app:isAutoAnimation="true"
+                app:isFanShaped="true"
                 android:layout_marginTop="8dp"
                 app:progressBarColor="@color/green_status"
                 app:progressBarWidth="5dp"
