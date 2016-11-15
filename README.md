@@ -23,6 +23,7 @@ app:progressBarColor="#2599ea"
 app:progressBarWidth="5dp"
 app:progressValue="95"
 app:textColor="#2599ea"
+app:isFanShaped="true"
 app:textSize="16sp" />
 ```
 ###Attributes
