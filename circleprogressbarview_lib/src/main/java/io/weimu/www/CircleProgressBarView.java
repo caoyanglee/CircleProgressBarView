@@ -13,8 +13,6 @@ import android.util.Log;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 
-
-
 /**
  *@author caoyang[艹羊]
  *@sutdio WeiMu[微木]
@@ -115,8 +113,13 @@ public class CircleProgressBarView extends View {
         }
 
         setMeasuredDimension(mWidth, mHeight);
+        rect = new RectF(0, 0, mWidth, mHeight);
     }
-
+    Paint bigCirclePaint = new Paint();
+    Paint grayPaint = new Paint();
+    Paint sectorPaint = new Paint();
+    Paint smallCirclePaint = new Paint();
+    RectF rect;
     @Override
     protected void onDraw(Canvas canvas) {
         Log.d("caoyang", "start onDraw");
@@ -128,32 +131,22 @@ public class CircleProgressBarView extends View {
         }
 
         //背景图
-        Paint bigCirclePaint = new Paint();
         bigCirclePaint.setAntiAlias(true);
         bigCirclePaint.setColor(mBackGroundColor);
-
-
         canvas.drawCircle(x, y, mRadius, bigCirclePaint);
 
 
         //进度条背景
-        Paint grayPaint = new Paint();
         grayPaint.setColor(mProgressBarBackgroundColor);
         grayPaint.setAntiAlias(true);
-        RectF rect1 = new RectF(0, 0, mWidth, mHeight);
-
-        canvas.drawArc(rect1, 270, 360, true, grayPaint);
+        canvas.drawArc(rect, 270, 360, true, grayPaint);
 
         //进度条
-        Paint sectorPaint = new Paint();
         sectorPaint.setColor(mProgressBarColor);
         sectorPaint.setAntiAlias(true);
-        RectF rect = new RectF(0, 0, mWidth, mHeight);
-
         canvas.drawArc(rect, 270, mEndAngle, true, sectorPaint);
 
         //前景图
-        Paint smallCirclePaint = new Paint();
         smallCirclePaint.setAntiAlias(true);
         smallCirclePaint.setColor(mBackGroundColor);
         canvas.drawCircle(x, y, mRadius - mProgressbarWidth, smallCirclePaint);

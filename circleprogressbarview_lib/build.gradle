@@ -21,7 +21,18 @@ android {
         }
     }
 }
-
+allprojects {
+    repositories {
+        jcenter()
+    }
+    //加上这些
+    tasks.withType(Javadoc) {
+        options{ encoding "UTF-8"
+            charSet 'UTF-8'
+            links "http://docs.oracle.com/javase/7/docs/api"
+        }
+    }
+}
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -33,10 +44,12 @@ dependencies {
 
 //添加
 publish {
-    userOrg = 'caoyanglee'//bintray.com用户名
-    groupId = 'com.caoyanglee'//jcenter上的路径
-    artifactId = 'circleprogressbarview'//项目名称
+    userOrg = 'weimu'//bintray.com用户名
+    groupId = 'com.weimu'//jcenter上的路径
+    artifactId = 'circle-progressbar-view'//项目名称
     publishVersion = '1.0.0'//版本号
     desc = 'circle progressbar view'//描述，不重要
-    website = 'https://github.com/hyman/basetools'//网站，不重要；尽量模拟github上的地址，例如我这样的；当然你有地址最好了
+    website = 'https://github.com/CaoyangLee/CircleProgressBarView'//网站，不重要；尽量模拟github上的地址，例如我这样的；当然你有地址最好了
 }
+
+
