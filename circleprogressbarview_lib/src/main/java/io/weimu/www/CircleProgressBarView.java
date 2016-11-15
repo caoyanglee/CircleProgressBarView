@@ -66,7 +66,13 @@ public class CircleProgressBarView extends View {
         super(context, attrs, defStyleAttr);
         mContext = context;
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.CircleProgressBarView, defStyleAttr, 0);
+
         mProgressValue = a.getInteger(R.styleable.CircleProgressBarView_progressValue, 0);
+        if (mProgressValue > 100) {
+            this.mProgressValue = 100;
+        } else {
+            this.mProgressValue = mProgressValue;
+        }
         mBackGroundColor = a.getColor(R.styleable.CircleProgressBarView_backgroundColor, 0xffffffff);//背景颜色
         mProgressBarColor = a.getColor(R.styleable.CircleProgressBarView_progressBarColor, 0xff33ccff);
         mProgressBarBackgroundColor = a.getColor(R.styleable.CircleProgressBarView_progressBarBackgroundColor, 0xfff6f6f6);
@@ -77,7 +83,6 @@ public class CircleProgressBarView extends View {
         mTextSize = a.getDimension(R.styleable.CircleProgressBarView_textSize, dip2px(16));
         isShowText= a.getBoolean(R.styleable.CircleProgressBarView_isShowText,true);
         mTextColor=a.getColor(R.styleable.CircleProgressBarView_textColor,mProgressBarColor);
-        Log.d("caoyang", "init consctrue");
     }
 
 
@@ -88,7 +93,6 @@ public class CircleProgressBarView extends View {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        Log.d("caoyang", "init onMeasure");
         //获取测量模式
         int widthMode = MeasureSpec.getMode(widthMeasureSpec);
         int heightMode = MeasureSpec.getMode(heightMeasureSpec);
@@ -122,7 +126,6 @@ public class CircleProgressBarView extends View {
     RectF rect;
     @Override
     protected void onDraw(Canvas canvas) {
-        Log.d("caoyang", "start onDraw");
         //是否需要动画
         if (isShowAnimation) {
             mEndAngle = (int) (mProgressValue == 0 ? 0 : mCurrentProgressValue * 3.6);
@@ -147,9 +150,12 @@ public class CircleProgressBarView extends View {
         canvas.drawArc(rect, 270, mEndAngle, true, sectorPaint);
 
         //前景图
-        smallCirclePaint.setAntiAlias(true);
-        smallCirclePaint.setColor(mBackGroundColor);
-        canvas.drawCircle(x, y, mRadius - mProgressbarWidth, smallCirclePaint);
+        if (mProgressbarWidth<mRadius){
+            smallCirclePaint.setAntiAlias(true);
+            smallCirclePaint.setColor(mBackGroundColor);
+            canvas.drawCircle(x, y, mRadius - mProgressbarWidth, smallCirclePaint);
+        }
+
 
         if (isShowText){
             //绘制文本
@@ -168,9 +174,11 @@ public class CircleProgressBarView extends View {
 
     /**
      * 开始执行动画
-     *
      */
     public void runAnimation() {
+        if (!isShowAnimation){
+            return;
+        }
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -181,7 +189,7 @@ public class CircleProgressBarView extends View {
 
     private void actionAnimation() {
         // 运行之前，先取消上一次动画
-        cancelAnimate();
+        cancelAnimation();
         mCurrentProgressValue = 0;
         mAnimator = ValueAnimator.ofObject(new FloatEvaluator(), 0, mProgressValue);
         // 设置差值器
@@ -201,7 +209,7 @@ public class CircleProgressBarView extends View {
     /**
      * 取消动画
      */
-    public void cancelAnimate() {
+    public void cancelAnimation() {
         if (mAnimator != null && mAnimator.isRunning()) {
             mAnimator.cancel();
         }
@@ -223,7 +231,7 @@ public class CircleProgressBarView extends View {
         super.onDetachedFromWindow();
         if (mProgressValue > mCurrentProgressValue) {
             setmCurrentProgressValue(mCurrentProgressValue);
-            cancelAnimate();
+            cancelAnimation();
         }
 
     }
