@@ -38,7 +38,7 @@ app:textSize="16sp" />
 | isShowAnimation | boolean |是否需要动画
 | isAutoAnimation | boolean |是否需要自动启动动画
 | animationTime | integer | 动画时间
-| textSize | dimension | 是否显示百分比文本
+| textSize | dimension | 百分比文本大小
 | textColor | color | 百分比文本颜色
 | isShowText | boolean | 是否显示文本
 | isFanShaped | boolean | 是否为扇形
