@@ -1,6 +1,6 @@
-#CircleProgressBarView
+# CircleProgressBarView
 A library Show the progress with circleBar feature.一个展示圆形进度条的开源库
-##Demo
+## Demo
 ![](https://github.com/CaoyangLee/CircleProgressBarView/blob/master/circleProgressBarView.gif)
 
 
@@ -26,7 +26,7 @@ app:textColor="#2599ea"
 app:isFanShaped="true"
 app:textSize="16sp" />
 ```
-###Attributes
+### Attributes
 
 |name|format|description|
 |:---:|:---:|:---:|
@@ -43,7 +43,7 @@ app:textSize="16sp" />
 | isShowText | boolean | 是否显示文本
 | isFanShaped | boolean | 是否为扇形
 
-##Gradle
+## Gradle
 
 ```Jcenter
 dependencies{
